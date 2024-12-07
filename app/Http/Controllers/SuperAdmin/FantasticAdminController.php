@@ -13,7 +13,7 @@ class FantasticAdminController extends Controller
     public function index(){
 
         $users = User::all();
-        return view ('superadmin/index', compact('users'));
+        return view ('superAdmin/index', compact('users'));
     }
 
     public function destroy(Request $request)
