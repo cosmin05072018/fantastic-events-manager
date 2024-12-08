@@ -1238,9 +1238,7 @@
   <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
 
   <!-- Main JS File -->
-  <!--<script src="assets/js/main.js"></script>-->
-  <script src="{{ asset('js/main.js') }}"></script>
-
+  <script src="assets/js/main.js"></script>
 
 </body>
 
