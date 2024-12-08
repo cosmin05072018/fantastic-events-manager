@@ -66,7 +66,7 @@ class UserManagementController extends Controller
         $users = User::where('hotel_id', $hotelId)->get();
 
         // Returnăm view-ul cu datele utilizatorilor
-        return view('admin.managementHotelView', compact('users'));
+        return view('managementHotelView', compact('users'));
     }
 
 

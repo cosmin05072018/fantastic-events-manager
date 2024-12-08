@@ -58,7 +58,7 @@ class UserManagementController extends Controller
 
         $hotelId = session('hotel_id');
 
-        if (!$hotelId) {
+        if (!$hotel_id) {
             return;
         }
 
@@ -66,7 +66,7 @@ class UserManagementController extends Controller
         $users = User::where('hotel_id', $hotelId)->get();
 
         // Returnăm view-ul cu datele utilizatorilor
-        return view('admin.managementHotelView', compact('users'));
+        return view('managementHotelView', compact('users'));
     }
 
 

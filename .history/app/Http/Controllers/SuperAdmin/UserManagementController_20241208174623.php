@@ -53,21 +53,17 @@ class UserManagementController extends Controller
         return redirect()->back()->with('success', 'Utilizatorul a fost aprobat și hotelul a fost adăugat.');
     }
 
-    public function show(Request $request)
+    public function show(Request $request, $hotel_id)
     {
-
-        $hotelId = session('hotel_id');
-
-        if (!$hotelId) {
+        if (!$hotel_id) {
             return;
         }
 
-        // Preluăm utilizatorii aferenți hotelului
-        $users = User::where('hotel_id', $hotelId)->get();
+         // Preluăm utilizatorii aferenți hotelului
+    $users = User::where('hotel_id', $hotelId)->get();
 
-        // Returnăm view-ul cu datele utilizatorilor
-        return view('admin.managementHotelView', compact('users'));
-    }
+    // Returnăm view-ul cu datele utilizatorilor
+    return view('managementHotelView', compact('users'));
 
 
 
