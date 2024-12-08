@@ -77,9 +77,8 @@ class AuthenticatedSessionController extends Controller
 
     public function sameHotelView(Request $request)
     {
-        // Preia parametrii din URL
-        $hotel_id = $request->route('hotel_id'); // Preia hotel_id din ruta
-        $userIds = explode(',', $request->query('user_ids')); // Preia user_ids din query string
+        // Preia ID-urile utilizatorilor din parametri
+        $userIds = explode(',', $request->query('user_ids'));
 
         if (empty($userIds)) {
             return redirect()->back()->with('error', 'No users found!');
@@ -90,10 +89,8 @@ class AuthenticatedSessionController extends Controller
             ->with(['department', 'hotel'])
             ->get();
 
-        // Returnează vizualizarea cu utilizatorii și hotel_id
-        return view('sameHotelView', compact('users', 'hotel_id'));
+        return view('sameHotelView', compact('users'));
     }
-
 
     public function usersFromSameHotel()
     {
