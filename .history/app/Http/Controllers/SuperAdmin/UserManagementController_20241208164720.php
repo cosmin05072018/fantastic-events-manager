@@ -65,7 +65,7 @@ class UserManagementController extends Controller
 
         // Extragem utilizatorii din baza de date care aparțin acestui hotel
         $users = User::where('hotel_id', $hotelId)->get();
-        dd($users);
+
         // Returnăm view-ul cu datele utilizatorilor
         return view('sameHotelView', compact('users'));
     }

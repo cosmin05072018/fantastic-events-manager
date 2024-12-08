@@ -55,21 +55,14 @@ class UserManagementController extends Controller
 
     public function show(Request $request)
     {
-        // Preluăm ID-ul hotelului din request
-        $hotelId = $request->input('hotel_id');
 
-        // Validăm dacă ID-ul hotelului este furnizat
-        if (!$hotelId) {
-            return back()->withErrors(['error' => 'ID-ul hotelului este necesar.']);
-        }
+        dd($request);
+        // Preluăm utilizatorii din parametrii redirecționării
+        $users = $request->users;
 
-        // Extragem utilizatorii din baza de date care aparțin acestui hotel
-        $users = User::where('hotel_id', $hotelId)->get();
-        dd($users);
-        // Returnăm view-ul cu datele utilizatorilor
+        // Returnăm un view care afișează utilizatorii
         return view('sameHotelView', compact('users'));
     }
-
 
 
     public function destroy($userId)
