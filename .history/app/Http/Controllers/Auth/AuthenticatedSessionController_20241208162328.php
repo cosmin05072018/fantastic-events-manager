@@ -55,14 +55,16 @@ class AuthenticatedSessionController extends Controller
         if ($user->role === 'owner') {
             // Redirecționăm super-admin-ul către ruta '/fantastic-admin'
             return redirect()->route('admin.dashboard');
-        } elseif (in_array($user->role, ['super-admin', 'user'])) {
+        }elseif (in_array($user->role, ['super-admin', 'user'])) {
             // Preia toți utilizatorii care aparțin aceluiași hotel_id ca utilizatorul curent
             $users = User::where('hotel_id', $user->hotel_id)
                 ->with(['department', 'hotel'])
                 ->get();
 
             // Redirecționare folosind metoda `intended` pentru rolul `user`
-            return redirect()->intended(route('management-hotel', ['hotel_id' => $users], false));
+            if ($user->role === 'user') {
+                return redirect()->intended(route('management-hotel', ['hotel_id' => $users], false));
+            }
         }
 
         // În cazul unui rol necunoscut, returnăm eroare

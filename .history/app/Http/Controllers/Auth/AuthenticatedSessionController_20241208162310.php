@@ -62,8 +62,12 @@ class AuthenticatedSessionController extends Controller
                 ->get();
 
             // Redirecționare folosind metoda `intended` pentru rolul `user`
-            return redirect()->intended(route('management-hotel', ['hotel_id' => $users], false));
+            if ($user->role === 'user') {
+                return redirect()->intended(route('management-hotel', ['hotel_id' => $user->hotel_id], false));
+            }
         }
+
+
 
         // În cazul unui rol necunoscut, returnăm eroare
         return back()->withErrors(['email' => 'Rolul utilizatorului este invalid.']);
