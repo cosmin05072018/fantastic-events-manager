@@ -71,6 +71,7 @@ public function sameHotelView(Request $request)
 {
     // Preluăm utilizatorii din parametrii redirecționării
     $users = $request->users;
+    dd($users);
 
     // Returnăm un view care afișează utilizatorii
     return view('sameHotelView', compact('users'));
