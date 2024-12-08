@@ -57,10 +57,8 @@ class AuthenticatedSessionController extends Controller
             return redirect()->route('admin.dashboard');
         } elseif (in_array($user->role, ['super-admin', 'user'])) {
             // Preia toți utilizatorii care aparțin aceluiași hotel_id ca utilizatorul curent
-            $users = User::where('hotel_id', $user->hotel_id)
-                ->with(['department', 'hotel'])
-                ->get();
-            return redirect()->route('sameHotelView',  compact('users'));
+            $users = User::where('hotel_id', $user->hotel_id)->get();
+            return redirect()->route('sameHotelView', ['hotel_id' => $users->hotel_id]);
         }
 
 
