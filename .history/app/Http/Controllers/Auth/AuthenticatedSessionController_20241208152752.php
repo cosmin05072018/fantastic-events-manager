@@ -61,9 +61,7 @@ class AuthenticatedSessionController extends Controller
                 ->with(['department', 'hotel'])
                 ->get();
 
-            if ($request->route('hotel_id') == $user->hotel_id) {
-                return redirect()->route('admin.sameHotelView', ['hotel_id' => $user->hotel_id]);
-            }
+            return redirect()->route('admin.sameHotelView', ['hotel_id' => $user->hotel_id])->with('users', $users);
         }
 
 
