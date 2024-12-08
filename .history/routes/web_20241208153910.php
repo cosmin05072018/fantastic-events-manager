@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
 // SUPER ADMIN
 // Route::get('/fantastic-admin', [FantasticAdminController::class, 'index'])->name('admin.dashboard');
 
-Route::middleware('admin.access')->prefix('fantastic-admin')->name('admin')->group(function () {
+Route::middleware('admin.access')->prefix('fantastic-admin')->name('admin.')->group(function () {
     // Dashboard route
     Route::get('/', [FantasticAdminController::class, 'index'])->name('dashboard');
 
@@ -58,7 +58,7 @@ Route::middleware('admin.access')->prefix('fantastic-admin')->name('admin')->gro
 
 
     // utilizatorii din acelasi hotel
-    Route::get('/management-hotel/{hotel_id}', [UserManagementController::class, 'managementHotel'])->name('sameHotelView');
+    Route::get('management-hotel/{hotel_id}', [UserManagementController::class, 'sameHotelView'])->name('sameHotelView');
 });
 
 

@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
 // SUPER ADMIN
 // Route::get('/fantastic-admin', [FantasticAdminController::class, 'index'])->name('admin.dashboard');
 
-Route::middleware('admin.access')->prefix('fantastic-admin')->name('admin')->group(function () {
+Route::middleware('admin.access')->prefix('fantastic-admin')->name('admin.')->group(function () {
     // Dashboard route
     Route::get('/', [FantasticAdminController::class, 'index'])->name('dashboard');
 

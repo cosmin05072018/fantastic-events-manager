@@ -61,7 +61,7 @@ class AuthenticatedSessionController extends Controller
                 ->with(['department', 'hotel'])
                 ->get();
 
-            return redirect()->route('admin.management-hotel', ['hotel_id' => $user->hotel_id]);
+            return redirect()->route('sameHotelView', ['hotel_id' => $user->hotel_id]);
         }
 
 
