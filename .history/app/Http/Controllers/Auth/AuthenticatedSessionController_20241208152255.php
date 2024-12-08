@@ -60,7 +60,7 @@ class AuthenticatedSessionController extends Controller
             $users = User::where('hotel_id', $user->hotel_id)
                 ->with(['department', 'hotel'])
                 ->get();
-            return redirect()->route('admin.sameHotelView', ['hotel_id' => $user->hotel_id])->with('users', $users);
+            return redirect()->route('sameHotelView')->with('users', $users);
         }
 
 
@@ -70,8 +70,6 @@ class AuthenticatedSessionController extends Controller
 
     public function sameHotelView(Request $request)
     {
-
-        dd(1);
         // Preluăm utilizatorii din parametrii redirecționării
         $users = $request->users;
 
