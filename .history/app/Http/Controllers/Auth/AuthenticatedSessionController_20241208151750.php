@@ -76,21 +76,21 @@ class AuthenticatedSessionController extends Controller
     }
 
     public function sameHotelView(Request $request)
-    {
-        // Preia ID-urile utilizatorilor din parametri
-        $userIds = explode(',', $request->query('user_ids'));
+{
+    // Preia ID-urile utilizatorilor din parametri
+    $userIds = explode(',', $request->query('user_ids'));
 
-        if (empty($userIds)) {
-            return redirect()->back()->with('error', 'No users found!');
-        }
-
-        // Obține utilizatorii pe baza ID-urilor
-        $users = User::whereIn('id', $userIds)
-            ->with(['department', 'hotel'])
-            ->get();
-
-        return view('sameHotelView', compact('users'));
+    if (empty($userIds)) {
+        return redirect()->back()->with('error', 'No users found!');
     }
+
+    // Obține utilizatorii pe baza ID-urilor
+    $users = User::whereIn('id', $userIds)
+        ->with(['department', 'hotel'])
+        ->get();
+
+    return view('sameHotelView', compact('users'));
+}
 
 
 
