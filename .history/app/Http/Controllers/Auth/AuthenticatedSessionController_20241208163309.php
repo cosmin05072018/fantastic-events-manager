@@ -62,10 +62,6 @@ class AuthenticatedSessionController extends Controller
                 ->get();
 
             $idHotel = '';
-
-            foreach ($users as $user) {
-                $idHotel = $user[0]->hotel_id;
-            }
             // Redirecționare folosind metoda `intended` pentru rolul `user`
             return redirect()->intended(route('admin.management-hotel', ['hotel_id' => $idHotel]));
         }
