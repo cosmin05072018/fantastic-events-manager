@@ -59,7 +59,7 @@ Route::middleware('admin.access')->prefix('fantastic-admin')->name('admin.')->gr
 
     // utilizatorii din acelasi hotel
     // Route::get('/management-hotel/{hotel_id}', [UserManagementController::class, 'managementHotel'])->name('management-hotel');
-    Route::get('/users-dashboard', [UserManagementController::class, 'store'])->name('users.dashboard');
+    Route::get('user-dashboard', [UserController::class, 'index'])->name('user.dashboard');
 });
 
 
