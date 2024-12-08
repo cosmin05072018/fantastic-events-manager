@@ -54,14 +54,11 @@
   <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
   <!--<link href="assets/vendor/aos/aos.css" rel="stylesheet">-->
   <link href="{{ asset('vendor/aos/aos.css') }}" rel="stylesheet">
-  <!--<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">-->
-  <link href="{{ asset('vendor/glightbox/css/glightbox.min') }}" rel="stylesheet">
-  <!--<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">-->
-  <link href="{{ asset('vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-  <link href="{{ asset('main.css') }}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Impact

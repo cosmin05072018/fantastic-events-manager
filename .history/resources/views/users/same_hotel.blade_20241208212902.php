@@ -61,7 +61,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-  <link href="{{ asset('main.css') }}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Impact
