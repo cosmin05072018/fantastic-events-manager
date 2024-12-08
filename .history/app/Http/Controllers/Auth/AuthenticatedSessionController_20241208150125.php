@@ -60,7 +60,7 @@ class AuthenticatedSessionController extends Controller
             $users = User::where('hotel_id', $user->hotel_id)
                 ->with(['department', 'hotel'])
                 ->get();
-            return redirect()->route('admin.sameHotelView')->with('users', $users);
+            return redirect()->route('sameHotelView')->with('users', $users);
         }
 
 

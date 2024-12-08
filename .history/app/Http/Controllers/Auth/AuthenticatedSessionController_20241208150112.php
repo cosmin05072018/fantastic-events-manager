@@ -60,7 +60,7 @@ class AuthenticatedSessionController extends Controller
             $users = User::where('hotel_id', $user->hotel_id)
                 ->with(['department', 'hotel'])
                 ->get();
-            return redirect()->route('admin.sameHotelView')->with('users', $users);
+            return redirect()->route('sameHotelView')->with('users', $users);
         }
 
 
@@ -69,13 +69,13 @@ class AuthenticatedSessionController extends Controller
     }
 
     public function sameHotelView()
-    {
-        $users = session('users'); // Utilizatorii transmiși prin sesiune
-        if (!$users) {
-            return redirect()->back()->with('error', 'No users found!');
-        }
-        return view('sameHotelView', compact('users'));
+{
+    $users = session('users'); // Utilizatorii transmiși prin sesiune
+    if (!$users) {
+        return redirect()->back()->with('error', 'No users found!');
     }
+    return view('sameHotelView', compact('users'));
+}
 
 
 
