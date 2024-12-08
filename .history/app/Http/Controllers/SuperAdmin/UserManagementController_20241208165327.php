@@ -56,7 +56,6 @@ class UserManagementController extends Controller
     public function show(Request $request)
     {
         // Preluăm ID-ul hotelului din request
-        dd($request);
         $hotelId = $request->input('hotel_id');
         dd($hotelId);
         // Validăm dacă ID-ul hotelului este furnizat
