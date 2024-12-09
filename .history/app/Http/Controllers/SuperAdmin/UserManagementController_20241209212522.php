@@ -74,7 +74,7 @@ class UserManagementController extends Controller
         ];
 
         // Returnăm view-ul cu datele utilizatorilor
-        return view('users.same_hotel', compact('data'));
+        return view('users.same_hotel', compact('users, departments'));
     }
 
 
