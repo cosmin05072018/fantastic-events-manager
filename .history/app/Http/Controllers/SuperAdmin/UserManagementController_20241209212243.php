@@ -64,11 +64,11 @@ class UserManagementController extends Controller
         }
 
         // Preluăm utilizatorii aferenți hotelului
-        $departments= Department::all();
+        $departments=
         $users = User::where('hotel_id', $hotelId)->get();
 
         // Returnăm view-ul cu datele utilizatorilor
-        return view('users.same_hotel', compact('users, departments'));
+        return view('users.same_hotel', compact('users'));
     }
 
 
