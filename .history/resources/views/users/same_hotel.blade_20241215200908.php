@@ -81,10 +81,7 @@
                 <li><a href="#">Dropdown 4</a></li>
               </ul>
             </li>
-            <li class="dropdown">
-                <a href="#">
-                    <i class="bi bi-person-circle" style="font-size: 2rem; color: #3b82f6;"></i>
-                    <span>Hello, {{ $authUser->manager_name }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li class="dropdown"><a href="#"><span>Hello, {{ $authUser->manager_name }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Logout</a></li>
                 </ul>
