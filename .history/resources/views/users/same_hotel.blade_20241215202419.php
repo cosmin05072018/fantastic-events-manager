@@ -78,7 +78,7 @@
                 </li>
                 <li><a href="#">Dropdown 2</a></li>
                 <li><a href="#">Dropdown 3</a></li>
-                <li></li>
+                <li><a href="#">Dropdown 4</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -86,7 +86,12 @@
                     <span>Bun venit, {{ $authUser->manager_name }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                     <li>
-                        <a href="{{ route('logout') }}">Dezautentificare</a>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <div class="col-md-12 text-center">
+                                <button class="cta-btn" type="submit">Dezautentificare</button>
+                            </div>
+                        </form>
                     </li>
                 </ul>
             </li>
