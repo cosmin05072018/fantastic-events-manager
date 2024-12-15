@@ -86,7 +86,7 @@
                     <span>Bun venit, {{ $authUser->manager_name }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                     <li>
-                        <form action="{{ route('logout') }}" method="POST">
+                        <form action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                             <button type="submit">Dezautentificare</button>
                         </form>

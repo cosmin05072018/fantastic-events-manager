@@ -85,12 +85,7 @@
                 <a href="#">
                     <span>Bun venit, {{ $authUser->manager_name }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                    <li>
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button type="submit">Dezautentificare</button>
-                        </form>
-                    </li>
+                  <li><a href="#">Logout</a></li>
                 </ul>
             </li>
           </ul>
