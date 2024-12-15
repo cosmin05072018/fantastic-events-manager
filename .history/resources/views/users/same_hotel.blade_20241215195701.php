@@ -81,7 +81,7 @@
                 <li><a href="#">Dropdown 4</a></li>
               </ul>
             </li>
-            <li><a href="#contact">Hello, {{ users->manager_name }}</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#">Logout</a></li>
